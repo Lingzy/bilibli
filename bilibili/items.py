@@ -10,5 +10,10 @@ import scrapy
 
 class BilibiliItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    name = scrapy.Field()
+    genter = scrapy.Field()
+    vip = scrapy.Field()
+    age = scrapy.Field()
+    register_date = scrapy.Field()
+    comment = scrapy.Field()
+    
