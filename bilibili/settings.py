@@ -46,9 +46,10 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'bilibili.middlewares.BilibiliSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   # 'bilibili.middlewares.BilibiliSpiderMiddleware': 543,
+   'scrapy_splash.SplashDeduplicateArgsMiddleware':100,
+}
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
@@ -68,11 +69,7 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-<<<<<<< HEAD
    'bilibili.pipelines.BilibiliPipeline': 300,
-=======
-   'bilibili.pipelines.SomePipeline': 300,
->>>>>>> 4b818e83b24c4f88eb694ad768147295c8cf49ea
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
@@ -94,7 +91,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_EXPIRATION_SECS = 0
 #HTTPCACHE_DIR = 'httpcache'
 #HTTPCACHE_IGNORE_HTTP_CODES = []
-#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
+HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
 # MongoDB config
 MONGO_HOST = '127.0.0.1'
@@ -103,3 +100,4 @@ DB_NAME = 'bilibili'
 
 # Slash config
 SPLASH_URL = 'http://127.0.0.1:8050'
+DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
