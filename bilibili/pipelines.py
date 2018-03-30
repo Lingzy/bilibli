@@ -29,7 +29,7 @@ class BilibiliPipeline(object):
 
     def close_spider(self,spider):
         self.client.close()
-        
+
 
     def process_item(self, item, spider):
         self.db[self.collection_name].insert(dict(item))
