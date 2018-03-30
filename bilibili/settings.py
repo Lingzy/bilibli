@@ -52,9 +52,12 @@ ROBOTSTXT_OBEY = True
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
-#DOWNLOADER_MIDDLEWARES = {
-#    'bilibili.middlewares.MyCustomDownloaderMiddleware': 543,
-#}
+DOWNLOADER_MIDDLEWARES = {
+   # 'bilibili.middlewares.MyCustomDownloaderMiddleware': 543,
+   'scrapy_splash.SplashCookiesMiddleware':723,
+   'scrapy_splash.SplashMiddleware':725,
+   'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware':810,
+}
 
 # Enable or disable extensions
 # See http://scrapy.readthedocs.org/en/latest/topics/extensions.html
@@ -64,9 +67,9 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-# ITEM_PIPELINES = {
-#    'bilibili.pipelines.SomePipeline': 300,
-# }
+ITEM_PIPELINES = {
+   'bilibili.pipelines.BilibiliPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
@@ -93,4 +96,6 @@ ROBOTSTXT_OBEY = True
 MONGO_HOST = '127.0.0.1'
 MONGO_PORT = 27017
 DB_NAME = 'bilibili'
-SHEET = 'userinfo'
+
+# Slash config
+SPLASH_URL = 'http://127.0.0.1:8050'
