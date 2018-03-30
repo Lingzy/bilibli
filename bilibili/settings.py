@@ -68,7 +68,11 @@ DOWNLOADER_MIDDLEWARES = {
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
+<<<<<<< HEAD
    'bilibili.pipelines.BilibiliPipeline': 300,
+=======
+   'bilibili.pipelines.SomePipeline': 300,
+>>>>>>> 4b818e83b24c4f88eb694ad768147295c8cf49ea
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -5,7 +5,10 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 from pymongo import MongoClient
+<<<<<<< HEAD
 from scrapy.exceptions import DropItem
+=======
+>>>>>>> 4b818e83b24c4f88eb694ad768147295c8cf49ea
 import settings
 
 class BilibiliPipeline(object):
